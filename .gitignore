@@ -1,0 +1,19 @@
+# Data, cached embeddings, and model checkpoints are large and regenerable
+data/
+checkpoints/
+*.pt
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/

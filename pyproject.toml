@@ -1,0 +1,44 @@
+[project]
+name = "drug-protein-affinity"
+version = "1.0.0"
+description = "Predicting drug–protein binding affinity (pKd) from frozen ProtBERT and ChemBERTa embeddings"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Andrew Jing" },
+    { name = "Awassada Ariyaphuttarat" },
+    { name = "Hoi Cheung" },
+    { name = "Sammy Mohamed" },
+]
+dependencies = [
+    "numpy",
+    "pandas",
+    "torch>=2.1",
+]
+
+[project.optional-dependencies]
+# Everything needed to run the full notebook end to end.
+notebook = [
+    "jupyter",
+    "matplotlib",
+    "seaborn",
+    "scikit-learn",
+    "optuna",
+    "requests",
+    "tqdm",
+    "PyTDC",
+    "transformers>=4.40,<5.0",
+    "huggingface_hub>=0.20,<1.0",
+]
+dev = ["pytest"]
+
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
